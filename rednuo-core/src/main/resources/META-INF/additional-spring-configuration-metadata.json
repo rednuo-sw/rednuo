@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "rednuo.core.urs-package",
+      "type": "java.lang.String",
+      "description": "Description for rednuo.core.urs-package.多个用逗号分开.",
+      "defaultValue": "com.rednuo"
+  }
+] }

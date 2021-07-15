@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace：命名空间，用于隔离sql-->
+<mapper namespace="com.rednuo.avery.mapper.HeartBeatMapper">
+    <select id="getMachineState" resultType="com.rednuo.avery.vo.GetMachineStateExt">
+        select `heart_beat`.`machine` AS `machine`,(case when ((unix_timestamp(now()) - `heart_beat`.`int_time`) > 300) then 0 else 1 end) AS `state` from `heart_beat`
+    </select>
+</mapper>

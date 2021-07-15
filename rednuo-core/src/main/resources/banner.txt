@@ -1,0 +1,6 @@
+                     _
+    _ _    ___    __| |   _ _     _  _     ___
+   | '_|  / -_)  / _` |  | ' \   | +| |   / _ \
+  _|_|_   \___|  \__,_|  |_||_|   \_,_|   \___/
+ |"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+                  ${AnsiColor.CYAN} (springBoot Ver: ${spring-boot.version} && redNuo Ver: ${application.formatted-version} )

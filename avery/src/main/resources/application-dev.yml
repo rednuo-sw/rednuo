@@ -1,0 +1,36 @@
+server:
+  port: 50100
+spring:
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    timeout: 5000 #连接超时时间
+    jedis:
+      pool:
+        maxActive: 3
+        maxIdle: 3
+        minIdle: 1
+        maxWait: -1
+    password: rednuo
+  datasource:
+      url: jdbc:mysql://109.120.5.84:3306/avery?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: qaz741//
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: true
+
+nz:
+  redis-key: WaitToMysql
+  redis-num: 800
+  log-path: d:/logs
+
+rednuo:
+  core:
+    urs-package: com.xxx
+
+mybatis:
+  configuration:
+    # 开启驼峰uName自动映射到u_name
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,0 +1,44 @@
+server:
+  port: 50100
+spring:
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    timeout: 5000 #连接超时时间
+    jedis:
+      pool:
+        maxActive: 3
+        maxIdle: 3
+        minIdle: 1
+        maxWait: -1
+    # password: rednuo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/avery?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: avery666!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 5 #初始化建立连接数
+      min-idle: 5 #最小连接数
+      max-active: 20 #最大连接数
+      max-wait: 100000 #获取连接最大等待时间
+      test-on-borrow: true #申请连接是检查是否有效
+      test-on-return: false #归还连接是检测是否有效
+      min-evictable-idle-time-millis: 300000 #连接在连接池里最小生存时间(毫秒)
+      time-between-eviction-runs-millis: 60000 #配置间隔检测连接是否有效的时间
+  jpa:
+    #show-sql: true
+    generate-ddl: true
+
+
+nz:
+  redis-key: WaitToMysql
+  redis-num: 800
+  log-path: c:/logs/avery
+
+
+mybatis:
+  configuration:
+    # 开启驼峰uName自动映射到u_name
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
