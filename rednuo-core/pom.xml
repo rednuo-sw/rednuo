@@ -11,6 +11,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rednuo</groupId>
+    <name>rednuo-core</name>
     <artifactId>rednuo-core</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
@@ -136,7 +137,7 @@
         <profile>
             <id>release</id>
             <build>
-            <pluginManagement>
+<!--            <pluginManagement>-->
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -145,6 +146,7 @@
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
+                                <phase>verify</phase>
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
@@ -162,6 +164,7 @@
                                     <goal>jar</goal>
                                 </goals>
                                 <configuration>
+<!--                                    免去方法,类等上面的注释异常-->
                                     <doclint>none</doclint>
                                 </configuration>
                             </execution>
@@ -170,7 +173,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -178,11 +180,15 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <keyname>0x4E0624A9</keyname>
+                                    <passphraseServerId>0x4E0624A9</passphraseServerId>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
-            </pluginManagement>
+<!--            </pluginManagement>-->
             </build>
         </profile>
     </profiles>
