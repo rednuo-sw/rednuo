@@ -8,8 +8,9 @@
         <version>2.3.10.RELEASE</version>
         <relativePath/>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.rednuo</groupId>
     <artifactId>rednuo-core</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
@@ -128,14 +129,14 @@
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
+<!--            <distribution>repo</distribution>-->
         </license>
     </licenses>
     <profiles>
         <profile>
             <id>release</id>
             <build>
-                <pluginManagement>
+            <pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -180,34 +181,22 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8.2</version>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
                 </plugins>
-                </pluginManagement>
+            </pluginManagement>
             </build>
         </profile>
     </profiles>
+
     <!-- 下方url一般都是如此，从官方文档中也能看到 -->
     <distributionManagement>
-        <repository>
-            <id>releases</id>  <!-- 即可maven setting.xml配置的id -->
-            <name>Stage repository</name>
-            <url>
-                https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/
-            </url>
-        </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <name>Snapshots repository</name>
+            <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
-
 
 </project>
