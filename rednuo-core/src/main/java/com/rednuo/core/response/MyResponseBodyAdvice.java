@@ -15,6 +15,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  */
 @RestControllerAdvice(value = {"com.rednuo"})
 public class MyResponseBodyAdvice implements ResponseBodyAdvice {
+    public MyResponseBodyAdvice() {
+        System.out.println("");
+    }
+
     @Override
     public boolean supports(MethodParameter methodParameter, Class aClass) {
         return true;

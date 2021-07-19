@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @Slf4j
 @Component
-@Order(900)
+@Order(-1)
 public class CorePluginInitializer implements ApplicationRunner {
 
     @Autowired
