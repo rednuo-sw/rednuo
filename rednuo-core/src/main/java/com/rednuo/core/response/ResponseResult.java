@@ -19,6 +19,18 @@ public class ResponseResult<T> {
     long timestamp = System.currentTimeMillis();
     T result;
 
+    public ResponseResult(boolean isSuccess, int code, String message){
+        this.isSuccess = isSuccess;
+        this.code = code;
+        this.message = message;
+    }
+    public ResponseResult(boolean isSuccess, int code, String message, T result) {
+        this.isSuccess = isSuccess;
+        this.code = code;
+        this.message = message;
+        this.result = result;
+    }
+
     public ResponseResult(ResultCode resultCode) {
         this.isSuccess=resultCode.isSuccess();
         this.code=resultCode.code();

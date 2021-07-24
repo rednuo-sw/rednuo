@@ -156,7 +156,7 @@ public class Encryptor {
      * 默认加密seed（可通过配置文件）
      */
     private static String getDefaultKey(){
-        String defaultKey = BaseConfig.getProperty("diboot.encryptor.seed");
-        return V.notEmpty(defaultKey)? defaultKey : "DibootV2";
+        String defaultKey = BaseConfig.getProperty("rednuo.encryptor.seed");
+        return V.notEmpty(defaultKey)? defaultKey : "RednuoV1";
     }
 }

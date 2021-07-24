@@ -268,7 +268,7 @@ public class ContextHelper implements ApplicationContextAware {
             }
         }
         if(jdbcUrl == null){
-            String urlConfigItem = environment.getProperty("diboot.datasource.url.config");
+            String urlConfigItem = environment.getProperty("rednuo.datasource.url.config");
             if(urlConfigItem != null){
                 jdbcUrl = environment.getProperty(urlConfigItem);
             }

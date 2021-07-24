@@ -414,6 +414,7 @@ public class BaseServiceImpl<M extends BaseCrudMapper<T>, T> extends ServiceImpl
             return Binder.joinQueryList((DynamicJoinQueryWrapper)queryWrapper, entityClass, pagination);
         }
         // 否则，调用MP默认实现
+        // TODO:这里是全部查出来了.
         if(pagination != null){
             IPage<T> page = convertToIPage(queryWrapper, pagination);
             page = super.page(page, queryWrapper);
